@@ -1,3 +1,11 @@
+.btns__btn {
+  padding: 5px 10px;
+  border: 1px solid #FFCC00;
+  min-width: 118px;
+  border-radius: 6px;
+  color: #666666;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -77,6 +85,16 @@ body {
   padding: 70px 0;
   color: #666666;
 }
+.section::before {
+  content: "";
+  position: absolute;
+  left: 219px;
+  height: 2px;
+  width: 560px;
+  background-color: #FFCC00;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
 .section__wrapper {
   display: flex;
   justify-content: none;
@@ -85,12 +103,22 @@ body {
   gap: none;
 }
 .section__title {
+  position: relative;
   font-family: "Roboto";
   font-weight: 900;
   font-size: 36px;
   line-height: 42px;
   text-transform: capitalize;
   margin-bottom: 60px;
+}
+.section__title::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 60px;
+  height: 2px;
+  width: 100px;
+  background-color: #FFCC00;
 }
 .section__subtitle {
   font-size: 24px;
@@ -107,6 +135,13 @@ body {
   margin-bottom: 49px;
 }
 
+.decor__item {
+  content: " ";
+  max-width: 20px;
+  max-height: 4px;
+  background-color: #FFCC00;
+}
+
 .list {
   display: flex;
   justify-content: none;
@@ -115,4 +150,31 @@ body {
   gap: 5px;
   list-style: none;
   margin-bottom: 49px;
+}
+
+.link__icon {
+  stroke: #CCCCCC;
+  fill: #CCCCCC;
+}
+
+.btns {
+  position: relative;
+}
+.btns::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  top: -25px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  background: linear-gradient(to left, #ffcc00 20%, #fff 20% 30%, #ffcc00 30% 70%, #fff 70% 80%, #ffcc00 80%);
+}
+.btns__btn {
+  font-family: "Open Sans";
+  font-weight: 700;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
 }

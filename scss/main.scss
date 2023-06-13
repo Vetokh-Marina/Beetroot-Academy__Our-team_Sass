@@ -2,6 +2,7 @@
 // font-family: 'Roboto', sans-serif;
 @import 'vars';
 @import 'mixins';
+@import 'extends';
 
 * {
    box-sizing: border-box;
@@ -83,17 +84,39 @@ body {
    padding: 70px 0;
    color: $font_color;
 
+   &::before {
+      content: '';
+      position: absolute;
+      left: 219px;
+      height: 2px;
+      width: 560px;
+      background-color: $color_title;
+      transform: rotate(90deg);
+
+   }
+
    &__wrapper {
       @include flex(none, center, column, none);
    }
 
    &__title {
+      position: relative;
       font-family: 'Roboto';
       font-weight: 900;
       font-size: 36px;
       line-height: 42px;
       text-transform: capitalize;
       margin-bottom: 60px;
+
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: -30px;
+         left: 60px;
+         height: 2px;
+         width: 100px;
+         background-color: $color_title;
+      }
 
    }
 
@@ -115,8 +138,45 @@ body {
    }
 }
 
+.decor__item {
+   content: ' ';
+   max-width: 20px;
+   max-height: 4px;
+   background-color: $color_title;
+}
+
 .list {
    @include flex(none, center, row, 5px);
    list-style: none;
    margin-bottom: 49px;
+}
+
+.link__icon {
+   stroke: #CCCCCC;
+   fill: #CCCCCC;
+
+}
+
+.btns {
+   position: relative;
+
+   &::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 4px;
+      top: -25px;
+      left: 50%;
+      transform: translate(-50%);
+      background: linear-gradient(to left, #ffcc00 20%, #fff 20% 30%, #ffcc00 30% 70%, #fff 70% 80%, #ffcc00 80%);
+   }
+
+   &__btn {
+      @extend %button;
+      font-family: 'Open Sans';
+      font-weight: 700;
+      line-height: 14px;
+      text-align: center;
+      text-transform: uppercase;
+   }
 }
