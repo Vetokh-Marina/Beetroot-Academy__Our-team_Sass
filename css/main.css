@@ -74,7 +74,7 @@ body {
 }
 
 .section {
-  padding: 0 70px;
+  padding: 70px 0;
   color: #666666;
 }
 .section__wrapper {
