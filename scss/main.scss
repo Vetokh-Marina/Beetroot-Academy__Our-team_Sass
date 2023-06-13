@@ -1,0 +1,122 @@
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Roboto', sans-serif;
+@import 'vars';
+@import 'mixins';
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+html,
+body {
+   min-height: 100vh;
+   font-family: $font_faily_main;
+   font-size: $font_size_main;
+   font-weight: 400;
+   color: $font_color;
+}
+
+.container {
+   max-width: $container_width;
+   padding: 121px 0;
+   margin: 0 auto;
+}
+
+.head {
+   text-align: center;
+   text-transform: uppercase;
+
+   &__subtitle_subt {
+      color: $color_subtitle;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 15px;
+
+   }
+
+   &__title {
+      font-family: 'Roboto';
+      font-weight: 900;
+      font-size: 60px;
+      line-height: 66px;
+      color: $color_title;
+      margin-bottom: 40px;
+   }
+
+   &__icon {
+      position: relative;
+      display: inline-block;
+
+      &::before,
+      &::after {
+         content: '';
+         position: absolute;
+         top: 6px;
+         height: 2px;
+         width: 210px;
+         background-color: $color_title;
+      }
+
+      &::after {
+         left: 20px;
+      }
+
+      &::before {
+         left: -210px;
+
+      }
+   }
+}
+
+.flex {
+   @include flex(space-between, center, column, 40px);
+}
+
+.d-flex {
+   @include flex(space-between, center, row, 185px);
+}
+
+.section {
+   padding: 0 70px;
+   color: $font_color;
+
+   &__wrapper {
+      @include flex(none, center, column, none);
+   }
+
+   &__title {
+      font-family: 'Roboto';
+      font-weight: 900;
+      font-size: 36px;
+      line-height: 42px;
+      text-transform: capitalize;
+      margin-bottom: 60px;
+
+   }
+
+   &__subtitle {
+      font-size: 24px;
+      line-height: 36px;
+      text-transform: capitalize;
+      margin-bottom: 30px;
+
+   }
+
+   &__text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+      color: $color_text;
+      margin-bottom: 49px;
+   }
+}
+
+.list {
+   @include flex(none, center, row, 5px);
+   list-style: none;
+   margin-bottom: 49px;
+}
